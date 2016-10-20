@@ -1,5 +1,6 @@
 article#fixed-income-rules {
 	font-family: 'Noto Sans S Chinese', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Helvetica', Arial, 'Lucida Grande', 'SimHei', Sans-Serif;
+	font-weight: 300;
 	font-size: 16px;
 	letter-spacing: 0.1em;
 	padding: 0.8em 1em 3em;
@@ -13,6 +14,7 @@ article#fixed-income-rules .icon {
 	display: block;
 	width: 1em;
 	height: 1em;
+	line-height: 1;
 	overflow: visible;
 }
 
@@ -54,7 +56,7 @@ article#fixed-income-rules .section-title {
 	font-size: 16px;
 	letter-spacing: 0.05em;
 	margin: 0 auto;
-	padding: 1em 1em 1em 1.5em;
+	padding: 1em 0 1em 1.5em;
 	color: #157dff;
 }
 
@@ -62,7 +64,6 @@ article#fixed-income-rules .section-title .icon {
 	position: absolute;
 	left: 0;
 	top: 1em;
-	background-color: lightblue;
 }
 
 article#fixed-income-rules .section-title h2 {
@@ -106,7 +107,6 @@ article#fixed-income-rules dt::before {
 }
 
 article#fixed-income-rules dd {
-	font-weight: 100;
 	margin: 0.5em auto 1em;
 }
 
@@ -137,4 +137,25 @@ article#fixed-income-rules section.tip.warning .section-title .icon {
 article#fixed-income-rules section.tip .section-body {
 	color: #666;
 	padding-left: 1.9em;
+	font-weight: 500;
+}
+
+article#fixed-income-rules ol.indices-in-parentheses {
+	padding-left: 0;
+	counter-reset: ol-indices-in-parentheses;
+}
+
+article#fixed-income-rules ol.indices-in-parentheses > li {
+	/*list-style-type: cjk-ideographic;*/
+	padding-left: 2em;
+	counter-increment: ol-indices-in-parentheses;
+	position: relative;
+	margin-bottom: 0.5em;
+}
+
+article#fixed-income-rules ol.indices-in-parentheses > li::before {
+	content: '(' counter(ol-indices-in-parentheses) ')';
+	display: block;
+	position: absolute;
+	left: 0;
 }

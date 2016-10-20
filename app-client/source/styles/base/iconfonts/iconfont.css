@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1476948068'); /* IE9*/
-  src: url('iconfont.eot?t=1476948068#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1476948068') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1476948068') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1476948068#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1476960927'); /* IE9*/
+  src: url('iconfont.eot?t=1476960927#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1476960927') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1476960927') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1476960927#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -16,5 +16,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-rmb-sign-in-shield:before { content: "\e600"; }
+.icon-item-list:before { content: "\e603"; }
 .icon-five-cornered-star-in-ring:before { content: "\e601"; }
-.icon-icon-i-in-pie:before { content: "\e602"; }
+.icon-i-in-pie:before { content: "\e602"; }

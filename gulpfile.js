@@ -81,11 +81,13 @@ gulp.task('before-everything', () => {
 
 var baseCssGlobs = [
   // 下面壹壹列出各个glob，目的是保证这些css文件合并的顺序。我们知道，错误的顺序将导致错误的结果。
-  pathSrcRoot+'/styles/base/_reset*.css',
-  pathSrcRoot+'/styles/base/iconfonts/*.css',
-  pathSrcRoot+'/styles/base/_fonts*.css',
-  pathSrcRoot+'/styles/base/base.css',
-  pathSrcRoot+'/styles/base/layout.css',
+  pathSrcRoot+'/styles/base/**/*.css',
+  pathSrcRoot+'/styles/pages/*.css',
+  // pathSrcRoot+'/styles/base/_reset*.css',
+  // pathSrcRoot+'/styles/base/iconfonts/*.css',
+  // pathSrcRoot+'/styles/base/_fonts*.css',
+  // pathSrcRoot+'/styles/base/base.css',
+  // pathSrcRoot+'/styles/base/layout.css',
 ];
 var baseCssGlobsIngored = [];
 
@@ -96,11 +98,11 @@ baseCssGlobs.forEach((glob) => {
 gulp.task('styles-base', ['before-everything'], () => {
   return gulp.src(baseCssGlobs)
     // .pipe(sourcemaps.init())
-      .pipe(concat('base.min.css')) // 这些css我要合并成单一文件
+      .pipe(concat('fixed-income-rules.min.css')) // 这些css我要合并成单一文件
       // .pipe(cssmin())
     // .pipe(sourcemaps.write('.'))
 
-    .pipe(gulp.dest(pathNewDistCacheRoot+'/styles/base/')) // 将文件写入指定文件夹
+    .pipe(gulp.dest(pathNewDistCacheRoot+'/styles/pages/')) // 将文件写入指定文件夹
   ;
 });
 
@@ -109,7 +111,7 @@ gulp.task('styles-iconfonts', ['before-everything'], () => {
     pathSrcRoot+'/styles/base/iconfonts/*',
     '!'+pathSrcRoot+'/styles/base/iconfonts/*.css', //前面加一个惊叹号，代表忽略这个glob。
   ])
-    .pipe(gulp.dest(pathNewDistCacheRoot+'/styles/base/')) // 将文件写入指定文件夹
+    .pipe(gulp.dest(pathNewDistCacheRoot+'/styles/pages/')) // 将文件写入指定文件夹
   ;
 });
 
@@ -157,7 +159,7 @@ gulp.task('styles', [
   'styles-base',
   'styles-iconfonts',
   'styles-dt-tech',
-  'styles-specific'
+  // 'styles-specific'
 ], () => {
   return gulp.src([
     pathNewDistCacheRoot+'/styles/**/*.css'
