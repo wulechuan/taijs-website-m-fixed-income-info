@@ -1,0 +1,16 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": [
+				"_old*",
+				"node_modules",
+				"app-client/build*",
+				"app-client/_build*",
+				"app-client/_temp"
+			],
+			"file_exclude_patterns": []
+		}
+	]
+}

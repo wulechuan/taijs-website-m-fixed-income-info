@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="income" class="overthrow-enabled ng-scope has-navbar-top">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@charset "UTF-8";
+		[ng\:cloak],
+		[ng-cloak],
+		[data-ng-cloak],
+		[x-ng-cloak],
+		.ng-cloak,
+		.x-ng-cloak,
+		.ng-hide:not(.ng-hide-animate) {
+			display: none !important;
+		}
+		
+		ng\:form {
+			display: block;
+		}
+		
+		.ng-animate-shim {
+			visibility: hidden;
+		}
+		
+		.ng-anchor {
+			position: absolute;
+		}
+	</style>
+	<title>固收</title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
+	<meta name="apple-mobile-web-app-status-bar-style" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<link rel="shortcut icon" type="image/x-icon" href="https://m.taijs.com/fund-web-app/css/img/favicon.ico;jsessionid=4C26C58C9EF72867C84CC217E9130071">
+	<link rel="stylesheet" href="styles/dt-tech/mobile-angular-ui-base.min.css">
+	<link rel="stylesheet" href="styles/dt-tech/mobile-angular-ui-hover.min.css">
+	<link rel="stylesheet" href="styles/dt-tech/fund.css">
+	<link rel="stylesheet" href="styles/dt-tech/exchange.css">
+	<link rel="stylesheet" href="styles/dt-tech/global.css">
+	<link rel="stylesheet" href="styles/dt-tech/product.css">
+</head>
+
+<body ui-prevent-touchmove-defaults="">
+	<!-- Navbars -->
+	<div class="navbar navbar-app navbar-absolute-top">
+		<div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+			<span class="ng-scope">固收详情</span>
+		</div>
+		<div class="btn-group pull-left" ui-yield-to="back">
+			<div class="btn sidebar-toggle">
+				<i class="fa fa-angle-left" back=""></i>
+			</div>
+		</div>
+		<div class="btn-group pull-right">
+			<div class="btn">
+				<i class="fa fa-home" home=""></i>
+			</div>
+		</div>
+	</div>
+
+	<!-- App Body -->
+	<div class="app-body" ng-class="{loading: loading}">
+		<div ng-show="loading" class="app-content-loading ng-hide">
+			<i class="fa fa-refresh fa-spin loading-spinner"></i>
+
+		</div>
+		<div class="app-content">
+			<!--<ng-view></ng-view>-->
+			<!-- uiView:  -->
+			<div ui-view="" class="ng-scope">
+
+
+
+				<!-- 
+				<div ui-content-for="right">
+				</div>
+				 -->
+				<div class="scrollable income-info list-group-div ng-scope">
+					<div class="scrollable-content">
+						<a id="all_to_top"></a>
+						<div class="container">
+							<div class="row income-info-title">
+								<div class="col-xs-12 ng-binding" ng-bind-html="incomeHtml">
+									<article id="fixed-income-rules">
+										
+									</article>
+								</div>
+							</div>
+
+
+							<div class="row tool-footer">
+								<div class="col-xs-12">
+									<!-- ngIf: !isLogin -->
+									<div class="col-xs-7 ng-scope" ng-if="!isLogin">
+										<a ng-href="login.html#/login" href="https://m.taijs.com/fund-web-app/customer/login.html#/login">登录</a>|<a ng-href="login.html#/register"
+											href="https://m.taijs.com/fund-web-app/customer/login.html#/register">注册</a>
+									</div>
+									<!-- end ngIf: !isLogin -->
+									<!-- ngIf: !isOpenAccount && isLogin -->
+									<!-- ngIf: isOpenAccount && isLogin -->
+
+									<div class="col-xs-5">
+										<span class="fixed" ng-click="toTop()">
+                                        <span class="pull-right">返回顶部</span>
+										<div class="toTop pull-right"></div>
+										</span>
+									</div>
+								</div>
+							</div>
+							<div class="row footer-info">
+								<div class="col-xs-12">
+									<div class="footer-a pull-right">
+										<a ng-click="download()">下载APP</a>|<a ng-href="account.html#/about-us" href="https://m.taijs.com/fund-web-app/customer/account.html#/about-us">关于我们</a>
+									</div>
+								</div>
+							</div>
+							<div class="row footer-info-p">
+								<div class="col-xs-12">
+									<div class="fund-bot">
+										<p><a href="tel:400-928-2299">400-928-2299</a></p>
+										<span>版权所有 ©2015-2016 泰金所</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 引入 弹出框模版 -->
+
+
+	<!-- 弹出框 组件配置 -->
+	<div ui-yield-to="modals"></div>
+
+	<!-- 强制 弹出框 模版-->
+	<!-- uiIf: modal1 -->
+
+	<!-- token失效，弹出 登录 提示框-->
+	<!-- uiIf: goLogin -->
+
+	<!-- 弱提示框 模版-->
+	<!-- uiIf: weekTipModal -->
+
+	<!-- 退出功能 弹出框-->
+	<!-- uiIf: logOutModal -->
+
+	<!-- uiIf: confirmModal -->
+</body>
+
+</html>
