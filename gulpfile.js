@@ -255,7 +255,8 @@ gulp.task('fonts', ['before-everything'], () => {
 
 gulp.task('images', ['before-everything'], () => {
   return gulp.src([
-    pathSrcRoot+'/fixed-income-rules_files/**/*',
+    pathSrcRoot+'/fixed-income-rules_files/**/*.jpg',
+    pathSrcRoot+'/fixed-income-rules_files/**/*.png',
     pathSrcRoot+'/images/**/*'
   ])
     .pipe(logFileSizes({title: '>>>>>>>>  Reporting Files: Images'})) // 为了装逼，在命令行窗口中打印一下文件尺寸
