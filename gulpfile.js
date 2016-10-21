@@ -228,7 +228,7 @@ gulp.task('html', ['before-everything'], () => {
       preserveLineBreaks: !shouldMinifyHTML,
       collapseWhitespace: !!shouldMinifyHTML,
 
-      removeComments: true,
+      removeComments: false,
       collapseBooleanAttributes: true,
       removeAttributeQuotes: false,
       removeRedundantAttributes: true,
