@@ -2,20 +2,29 @@ var pathSrcRoot          = 'app-client/source';
 var pathDistRoot         = 'app-client/build-dev';
 var pathNewDistCacheRoot = 'app-client/_build-cache';
 var pathTempRoot         = 'app-client/_temp';
+var shouldMinifyHTML     = true;
 
 // 文件夹结构：
 //
 // {root}
-//   ├─app-dev       <-- 这是开发源码（Development）文件夹
-//   │  ├─html
-//   │  ├─scripts
-//   │  └─styles
-//   │     └─base    <-- Reset通配定义、网站的基本定义、字体定义的css全放在这里，然后让gulp自动合并成base.min.css。
-//   ├─app-dist      <-- 这是发布（Distribution）文件夹
-//   │  ├─html
-//   │  ├─scripts
-//   │  └─styles
-//   └─node_modules  <-- 这是node插件文件夹，纯粹供node使用，与最终前端产品毫无干系
+//   └─ app-client
+//       ├─ source        <-- 这是开发源码（Development）文件夹
+//       │   ├─ html
+//       │   ├─ scripts
+//       │   └─ styles
+//       │       └─base   <-- Reset通配定义、网站的基本定义、字体定义的css全放在这里，然后让gulp自动合并成base.min.css。
+//       │
+//       ├─build-dev      <-- 这是开发预览文件夹
+//       │  ├─html
+//       │  ├─scripts
+//       │  └─styles
+//       │
+//       ├─build-release  <-- 这是正式发布文件夹
+//       │  ├─html
+//       │  ├─scripts
+//       │  └─styles
+//       │
+//       └─node_modules   <-- 这是node插件文件夹，纯粹供node使用，与最终前端产品毫无干系
 
 
 
@@ -219,8 +228,6 @@ gulp.task('scripts', ['scripts-unglify', 'scripts-vendors'], () => {
 });
 
 gulp.task('html', ['before-everything'], () => {
-  var shouldMinifyHTML = false;
-
   return gulp.src([
     pathSrcRoot+'/**/*.html'
   ])
